@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/ctran/annotate_models.git
+  revision: 9634ea6e67851d4a9a4d0b89597a6a9d3fc4d1f4
+  specs:
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
+
+GIT
   remote: git://github.com/gregbell/active_admin.git
   revision: bf9dabe6a568f2e17a65c3310530cbba77dfce9c
   specs:
@@ -47,6 +55,7 @@ GEM
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.7)
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
@@ -64,6 +73,12 @@ GEM
     delayed_job_active_record (4.0.1)
       activerecord (>= 3.0, < 4.2)
       delayed_job (>= 3.0, < 4.1)
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.1)
     formtastic (2.3.0.rc3)
@@ -93,6 +108,7 @@ GEM
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
+    orm_adapter (0.5.0)
     pg (0.17.1)
     polyamorous (1.0.0)
       activerecord (>= 3.0)
@@ -160,14 +176,18 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   activeadmin!
+  annotate!
   coffee-rails (~> 4.0.1)
   delayed_job_active_record (~> 4.0.1)
+  devise (~> 3.2.4)
   pg
   pry
   rails (~> 4.1.4)
