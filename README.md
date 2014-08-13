@@ -13,7 +13,7 @@ By default, we block more than 2 sign-ups from the same IP address. This was sim
 
 ## Setup
 
-* Follow the standard Rails 3.2.x setup tasks over at the [Rails GitHub](https://github.com/rails/rails/tree/v3.2.17), basically `bundle install` in this directory.
+* Follow the standard Rails 4.1.x setup tasks over at the [Rails GitHub repo](https://github.com/rails/rails/tree/v4.1.4), basically `bundle install` in this directory.
 * Run `bundle exec rake db:create db:schema:load db:seed` to setup the database
 * Type `bundle exec rails s` to startup the Rails Server
   * For convenience we have also bundled a Heroku Procfile to use on production. This uses [Unicorn](https://github.com/defunkt/unicorn) for the web server and runs a [Delayed::Job](https://github.com/collectiveidea/delayed_job) worker for sending email. 
@@ -28,7 +28,7 @@ When your prelaunch campaign comes to an end we've included a helpful `rake` tas
 
 * Change the default Admin user credentials in `/db/seeds.rb`
 * Set the different prize levels on the `User::REFERRAL_STEPS` constant inside `/app/models/user.rb`
-* Run `rake secret` to generate a new Rails `secret_token` and set it in `/config/intializers/secret_token.rb` (or in the `RAILS_SECRET` environment variable).
+* Run `rake secret` to generate a new Rails `secret_token` and set it in `/config/initializers/secret_token.rb` (or in the `RAILS_SECRET` environment variable).
 * The `config.ended` setting in `/config/application.rb` decides whether the prelaunch campaign has ended or not (e.g. Active/Inactive). We've included this option so you can quickly close the application and direct users to your newly launched site. 
 
 ## License
