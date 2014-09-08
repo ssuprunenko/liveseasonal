@@ -13,7 +13,12 @@ By default, we block more than 2 sign-ups from the same IP address. This was sim
 
 ## Setup
 
-* Follow the standard Rails 3.2.x setup tasks over at the [Rails GitHub](https://github.com/rails/rails/tree/v3.2.17), basically `bundle install` in this directory.
+The [master branch](https://github.com/harrystech/prelaunchr/tree/master) of prelaunchr uses Rails 3.2.x. A Rails 4 compatible branch [exists as rails_4](https://github.com/harrystech/prelaunchr/tree/rails_4).
+
+Follow the standard setup tasks documented at the Rails Github Repo depending on whether you are using 
+[Rails 3.2.x](https://github.com/rails/rails/tree/v3.2.17) or [Rails 4](https://github.com/rails/rails/tree/v4.1.4).
+Essentially this involves running `bundle install` in this repo directory.
+
 * Run `bundle exec rake db:create db:schema:load db:seed` to setup the database
 * Type `bundle exec rails s` to startup the Rails Server
   * For convenience we have also bundled a Heroku Procfile to use on production. This uses [Unicorn](https://github.com/defunkt/unicorn) for the web server and runs a [Delayed::Job](https://github.com/collectiveidea/delayed_job) worker for sending email. 
