@@ -1,20 +1,93 @@
-<div class="hero">
-    <p class="large brandon">Harry&#8217;s is live</p>
-    <p class="small brandon">Respecting the Face and Wallet<br>Since Like...Right Now.</p>
-</div>
+<%= render 'header' %>
 
-<div class="form-wrap clearfix <%= "ended" if Rails.application.config.ended %>">
-    <% if Rails.application.config.ended %>
-        <p class="thanks brandon">THANK YOU FOR PARTICIPATING<br>IN OUR PRE-LAUNCH.</p>
-        <p class="compiling brandon">WE ARE COMPILING REWARDS RIGHT NOW AND WILL EMAIL<br/>COUPON CODES TO ALL RECIPIENTS IN THE NEXT DAY OR TWO</p>
-        <p class="go-to brandon">In the meantime, head to  <a href="http://www.harrys.com/">WWW.HARRYS.COM</a></p>
-        <p class="again brandon">Thank You Again!</p>
-    <% else %>
-        <div class="key"></div>
-        <p class="byline brandon">Be the first to know</p>
-        <%= form_for @user, :url => { :action => "create" } do |f| %>
-            <%= f.text_field :email, :placeholder => "Enter Email", :class => "email brandon" %>
-            <input class="submit brandon" name="commit" type="submit" value="Step Inside" />
+<section class="banner">
+  <div class="container">
+    <h1>Experience travel from&nbsp;a&nbsp;local&nbsp;perspective!</h1>
+    <div class="row">
+      <div id="videobox">
+        <video id="a240e92d"
+               class="sublime"
+               poster="<%= asset_path 'home/poster@2x.jpg' %>"
+               width="640"
+               height="360"
+               title="Live Seasonal"
+               data-uid="a240e92d"
+               data-autoresize="fit"
+               preload="none">
+          <source src="<%= asset_path 'videos/promo.mov' %>" data-quality="hd" />
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="signup">
+  <div class="container">
+    <div class="row signup-tagline">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <p>Connect with fantastic people, share skills and experiences and make life long friends!</p>
+      </div>
+    </div>
+    <div class="row signup-action">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <%= form_for @user, url: { action: "create" }, html: { class: 'validate form-horizontal' } do |f| %>
+          <div class="form-group">
+              <div class="input-group input-group-lg">
+                <div class="icon-addon addon-lg">
+                  <%= f.text_field :email,
+                    placeholder: "Enter your e-mail address",
+                    class: "form-control email",
+                    id: 'email',
+                    type: 'email' %>
+                  <label for="email" class="glyphicon glyphicon-envelope text-muted" rel="tooltip" title="email"></label>
+                </div>
+                <span class="input-group-btn">
+                  <input class="submit btn btn-explore" name="commit" type="submit" value="EXPLORE" />
+                </span>
+              </div>
+          </div>
         <% end %>
-    <% end %>
-</div>
+      </div>
+    </div>
+    <div class="row signup-nospam">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <div class="nospam">
+          <em>We'll keep your e-mail safe. No spam, we promise!</em>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2>We are building a platform that connects Travelers and Locals</h2>
+
+    <div class="row">
+      <div class="col-md-6 feature">
+        <%= image_tag 'home/travelers.jpg' %>
+        <h3 class="pacifico">Travelers</h3>
+        <hr>
+        <p>Meet locals</p>
+        <p>Learn something</p>
+        <p>Travel more affordably</p>
+      </div>
+
+      <div class="col-md-6 feature">
+        <%= image_tag 'home/locals.jpg' %>
+        <h3 class="pacifico">Locals</h3>
+        <hr>
+        <p>Meet and connect with travelers</p>
+        <p>Share similar skills and passions</p>
+        <p>Be an Entrepreneur and make money</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="copy">
+    <p>Copyright © 2014 liveseasonal.com</p>
+  </div>
+</footer>
