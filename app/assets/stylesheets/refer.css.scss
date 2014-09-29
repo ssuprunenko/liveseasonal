@@ -1,0 +1,276 @@
+/* Refer a friend page */
+
+$darkishblue: rgb(47,68,128);
+$smokeblack: rgba(0,0,0,0.7);
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+#refer {
+  font-family: "Source Sans Pro",Helvetica,Arial,sans-serif !important;
+  color: $smokeblack;
+
+  .banner {
+    .row {
+      margin-bottom: 30px;
+    }
+
+    .slogan {
+      // width: 555px;
+      height: 420px;
+      background: asset-data-url("refer/banner-refer.jpg") 0 0 no-repeat;
+      background-size: 100%;
+      margin: 0 auto;
+      margin-top: 0;
+    }
+
+    .share-wrap {
+      width: 400px;
+      text-align: center;
+      letter-spacing: .13em;
+      margin: 0 auto;
+      margin-top: 50px;
+
+      .why {
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 20px;
+      }
+
+      .title {
+        font-size: 30px;
+        line-height: 40px;
+        // text-transform: uppercase;
+        font-weight: bold;
+        color: $darkishblue;
+        margin-top: 18px;
+        letter-spacing: .13em;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        text-transform: none;
+        margin-top: 15px;
+      }
+
+      .copy-link {
+        border: 1px solid #D1D0C7;
+        background: #FFF;
+        padding: 10px 0;
+        width: 330px;
+        text-transform: none;
+        font-size: 14px;
+        margin: 20px auto 0;
+      }
+
+      .social-links {
+        width: 120px;
+        height: 37px;
+        margin: 25px auto 0;
+        text-align: center;
+
+        a, div {
+          display: inline-block;
+        }
+
+        .fb {
+          background: asset-data-url("refer/fb.png");
+          background-size: 27px 27px;
+          width: 27px;
+          height: 27px;
+        }
+
+        .twit {
+          background: asset-data-url("refer/twit.png");
+          background-size: 27px 27px;
+          width: 27px;
+          height: 27px;
+        }
+
+        .sep {
+          height: 28px;
+          width: 1px;
+          background: #BAB9BA;
+          margin: 0 20px;
+        }
+      }
+    }
+  }
+
+  .prizes {
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 30px;
+      color: $darkishblue;
+      font-weight: bold;
+      margin: 20px 0 10px 0;
+      letter-spacing: 2px;
+    }
+
+    .rewards {
+      padding-top: 20px;
+
+      .titles {
+        padding-left: 20px;
+
+        #friends {
+          margin-top: 10px;
+          margin-bottom: 60px;
+        }
+
+        h2 {
+          font-size: 20px;
+          // margin-top: 30px;
+          // margin-bottom: 30px;
+        }
+      }
+
+      .product {
+        // height: 100%;
+        // color: #F1F0EE;
+        // width: 125px;
+        // margin-right: 129px;
+        // float: left;
+        // position: relative;
+
+        .circle {
+          height: 40px;
+          width: 40px;
+          border-radius: 20px;
+          font-size: 18px;
+          border: 1px solid #DAD9D2;
+          text-align: center;
+          line-height: 40px;
+          color: #868282;
+          overflow: hidden;
+          background: #F1F0EE;
+          font-weight: bold;
+          margin: 0 auto;
+        }
+
+        .reward {
+          background: #8effa6;
+          color: #00bf50;
+        }
+
+        .sep {
+          width: 12px;
+          height: 14px;
+          background: transparent;
+          margin: 13px auto 13px;
+        }
+
+        p {
+          text-align: center;
+          font-weight: 500;
+        }
+      }
+
+      .last {
+        margin-right: 0;
+      }
+
+      .progress {
+        height: 4px;
+        width: 88%;
+        margin: 0 auto;
+        background: asset-data-url("refer/progress-bg.png") 0 0 repeat-x;
+        background-size: 1px 4px;
+        position: relative;
+        top: -65px;
+        z-index: 0;
+
+        .mover {
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+
+    h2.callout {
+      color: $darkishblue;
+      margin-bottom: 20px;
+    }
+
+    p.place {
+      text-align: center;
+      font-size: 16px;
+      color: $smokeblack;
+      width: 100%;
+      font-weight: 500;
+      margin-top: 30px;
+
+      span {
+        color: #995F5E;
+      }
+    }
+
+    p.check {
+      text-align: center;
+      font-size: 16px;
+      color: #858181;
+      width: 100%;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+
+    a.policy {
+      text-align: center;
+      font-size: 12px;
+      color: #CCCCCC;
+      width: 100%;
+      font-weight: 500;
+      margin-top: 5px;
+      display: block;
+      text-decoration: none;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

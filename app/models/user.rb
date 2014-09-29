@@ -6,8 +6,8 @@
 #  email         :string(255)
 #  referral_code :string(255)
 #  referrer_id   :integer
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  created_at    :datetime
+#  updated_at    :datetime
 #
 
 class User < ActiveRecord::Base
@@ -22,28 +22,24 @@ class User < ActiveRecord::Base
 
     REFERRAL_STEPS = [
         {
-            'count' => 5,
-            "html" => "Shave<br>Cream",
-            "class" => "two",
-            "image" =>  ActionController::Base.helpers.asset_path("refer/cream-tooltip@2x.png")
+            count: 6,
+            reward: 3,
+            class: "two",
         },
         {
-            'count' => 10,
-            "html" => "Truman Handle<br>w/ Blade",
-            "class" => "three",
-            "image" => ActionController::Base.helpers.asset_path("refer/truman@2x.png")
+            count: 12,
+            reward: 6,
+            class: "three",
         },
         {
-            'count' => 25,
-            "html" => "Winston<br>Shave Set",
-            "class" => "four",
-            "image" => ActionController::Base.helpers.asset_path("refer/winston@2x.png")
+            count: 24,
+            reward: 12,
+            class: "four",
         },
         {
-            'count' => 50,
-            "html" => "One Year<br>Free Blades",
-            "class" => "five",
-            "image" => ActionController::Base.helpers.asset_path("refer/blade-explain@2x.png")
+            count: 50,
+            reward: 25,
+            class: "five",
         }
     ]
 

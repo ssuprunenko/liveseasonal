@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require bootstrapValidator.min
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+@import "home";
+@import "refer";
+
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif !important;
+}
+
+.navbar {
+  // max-height: 64px;
+  margin-bottom: 0px;
+
+  .logo {
+    height: 64px;
+
+    div {
+      position: relative;
+      top: 50%;
+      margin: -21px 0 0 0;
+      background: asset-data-url("liveseasonal-logo@2x.png") 0 0 no-repeat;
+      background-size: 220px;
+      height: 42px;
+      width: 220px;
+    }
+  }
+
+  ul.nav {
+    margin-top: 0;
+    margin-bottom: 0;
+    a {
+      font-size: 24px;
+      font-family: "Pacifico",Source Sans Pro,Helvetica,Arial,sans-serif !important;
+      font-weight: normal;
+      color: rgb(47,68,128);
+      padding: 0 20px;
+      line-height: 64px;
+      float: left;
+    }
+  }
+}

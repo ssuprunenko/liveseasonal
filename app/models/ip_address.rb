@@ -5,8 +5,8 @@
 #  id         :integer          not null, primary key
 #  address    :string(255)
 #  count      :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  created_at :datetime
+#  updated_at :datetime
 #
 
 class IpAddress < ActiveRecord::Base

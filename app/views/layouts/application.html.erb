@@ -5,27 +5,33 @@
 <!--[if IE 9 ]>    <html class="ie9 <%= @bodyId %>"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="<%= @bodyId %>"> <!--<![endif]-->
 <head>
-        <title>Harry&#8217;s &ndash; Tell Friends, Shave for Free</title>
-        <link rel="icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
-        <link rel="shortcut icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
+  <!-- SEO -->
+  <title>Live Seasonal | Experience travel from a local perspective</title>
+  <meta name="description" content="Meet locals, learn something &amp; travel more affordably. With Live Seasonal you connect with fantastic people, share skills &amp; experience and make life-long friends - Sign up today!" />
+  <link rel="canonical" href="http://liveseasonal.com" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Live Seasonal | Experience travel from a local perspective" />
+  <meta property="og:description" content="Meet locals, learn something &amp; travel more affordably. With Live Seasonal you connect with fantastic people, share skills &amp; experience and make life-long friends - Sign up today!" />
+  <meta property="og:url" content="http://liveseasonal.com" />
+  <meta property="og:site_name" content="Live Seasonal" />
+  <meta property="og:image" content="assets/img/liveseasonal-seo-icon.jpg" />
 
-        <meta property="og:title" content="Harry’s is coming!"/>
-        <meta property="og:description" content="Shaving is evolving. Didn’t want to leave you all behind. Check out Harry’s here."/>
-        <meta property="og:image" content="<%= asset_path("refer/truman.png") %>"/>
-        <meta property="og:url" content="<%= root_url %>"/>
-        <% if @is_mobile %>
-            <% if @bodyId == 'home' %>
-                <meta name="viewport" content="width=1600" />
-            <% else %>
-                <meta name="viewport" content="width=1120" />
-            <% end %>
-        <% end %>
-        <%= stylesheet_link_tag "core.css", :media => "all" %>
-        <%= csrf_meta_tags %>
+  <!-- Sparkplugs -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Pacifico' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag '//cdn.sublimevideo.net/js/zxeg8uvg.js' %>
+
+  <%= csrf_meta_tags %>
 </head>
 <body id="<%= @bodyId %>">
 
-<%= yield %>
+  <%= yield %>
 
 
 </body>
