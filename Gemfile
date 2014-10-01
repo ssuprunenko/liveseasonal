@@ -21,8 +21,8 @@ group :development do
   gem 'hirb-unicode'
   gem 'awesome_print'
 
-  gem 'rvm1-capistrano3', require: false
-  gem 'capistrano-rails'
+  gem 'capistrano', '~> 2.15.5'
+  gem 'rvm-capistrano'
   gem 'capistrano_colors'
   gem 'capistrano-unicorn', :require => false
 

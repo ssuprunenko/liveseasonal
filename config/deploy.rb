@@ -1,4 +1,4 @@
-require 'rvm1/capistrano3'
+require "rvm/capistrano"
 require 'bundler/capistrano'
 require 'capistrano_colors'
 require 'capistrano-unicorn'
@@ -103,4 +103,5 @@ after 'deploy:update_code', 'deploy:run_migrations'
 after  "deploy:finalize_update", "deploy:update_shared_symlinks"
 after "deploy:restart", "deploy:cleanup"
 
-require './config/boot'
+  require './config/boot'
+  # require 'airbrake/capistrano'
