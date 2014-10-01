@@ -21,12 +21,12 @@ group :development do
   gem 'hirb-unicode'
   gem 'awesome_print'
 
+  gem 'capistrano3-unicorn'
+
   # Very useful gem (used with Google Chrome extention 'Rails Panel'). Read more: https://github.com/dejan/rails_panel
   gem 'meta_request', '~> 0.3.4'
   gem 'better_errors'
   gem 'binding_of_caller'
-
-  gem 'annotate', git: 'git://github.com/ctran/annotate_models.git'
 end
 
 group :production do
@@ -36,5 +36,7 @@ end
 gem 'delayed_job_active_record', '~> 4.0.1'
 
 gem 'unicorn', '~> 4.8.3'
+gem 'unicorn-rails', '~> 2.2.0'
+
 gem 'capistrano-rails'
 gem 'capistrano-rvm', github: "capistrano/rvm"

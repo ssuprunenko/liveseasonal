@@ -20,7 +20,7 @@ set :deploy_to, '/home/deploy/liveseasonal'
 # set :log_level, :debug
 
 # Default value for :pty is false
-set :pty, true
+# set :pty, true
 
 # Default value for :linked_files is []
 set :linked_files, %w{config/database.yml}
@@ -38,10 +38,11 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
+    # on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
-      execute :touch, release_path.join('tmp/restart.txt')
-    end
+      # execute :touch, release_path.join('tmp/restart.txt')
+    invoke 'unicorn:restart'
+    # end
   end
 
   after :publishing, 'deploy:restart'

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 708e59018cdec2a078a173da0dbc0b732b3a9399
+  revision: 0c83cfe0b9b43a4a27a63c13f27d6682b0ff6cae
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0, >= 1.0.2)
@@ -22,14 +22,6 @@ GIT
     capistrano-rvm (0.1.1)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
-
-GIT
-  remote: git://github.com/ctran/annotate_models.git
-  revision: 038b13c04e575cc0f0c89c702c994166c7dc9955
-  specs:
-    annotate (2.6.5)
-      activerecord (>= 2.3.0)
-      rake (>= 0.8.7)
 
 GEM
   remote: https://rubygems.org/
@@ -93,6 +85,8 @@ GEM
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano3-unicorn (0.2.1)
+      capistrano (~> 3.1, >= 3.1.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -233,6 +227,9 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    unicorn-rails (2.2.0)
+      rack
+      unicorn
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -241,7 +238,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
-  annotate!
   autoprefixer-rails
   awesome_print
   better_errors
@@ -250,6 +246,7 @@ DEPENDENCIES
   bootstrap-validator-rails
   capistrano-rails
   capistrano-rvm!
+  capistrano3-unicorn
   coffee-rails (~> 4.0.1)
   delayed_job_active_record (~> 4.0.1)
   devise
@@ -263,3 +260,4 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   uglifier (>= 2.5.3)
   unicorn (~> 4.8.3)
+  unicorn-rails (~> 2.2.0)

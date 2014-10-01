@@ -7,6 +7,7 @@ require 'capistrano/deploy'
 require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/rvm'
+require 'capistrano3/unicorn'
 
 set :rvm_type, :user
 set :rvm_ruby_version, '2.1.3'
