@@ -19,5 +19,4 @@
 
 .elasticbeanstalk
 config/secrets.yml
-config/database.yml
 bin
