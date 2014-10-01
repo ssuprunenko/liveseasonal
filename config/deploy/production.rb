@@ -1,45 +1,11 @@
-# Simple Role Syntax
-# ==================
-# Supports bulk-adding hosts to roles, the primary server in each group
-# is considered to be the first unless any hosts have the primary
-# property set.  Don't declare `role :all`, it's a meta role.
+set :rvm_ruby_string, '2.1.3'
+set :rvm_type, :user
+set :server_name, '178.62.216.169'
+set :domain,      'liveseasonalexperiences.com'
+set :user,        "deploy"
+set :application, "liveseasonal"
+set :deploy_to, "/home/#{user}/#{application}"
 
-role :app, %w{deploy@178.62.216.169}
-role :web, %w{deploy@178.62.216.169}
-role :db,  %w{deploy@178.62.216.169}
-set :stage, :production
-
-# Extended Server Syntax
-# ======================
-# This can be used to drop a more detailed server definition into the
-# server list. The second argument is a, or duck-types, Hash and is
-# used to set extended properties on the server.
-
-server '178.62.216.169', user: 'deploy', roles: %w{web app}
-
-
-# Custom SSH Options
-# ==================
-# You may pass any option but keep in mind that net/ssh understands a
-# limited set of options, consult[net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start).
-#
-# Global options
-# --------------
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
-#
-# And/or per server (overrides global)
-# ------------------------------------
-# server 'example.com',
-#   user: 'user_name',
-#   roles: %w{web app},
-#   ssh_options: {
-#     user: 'user_name', # overrides user setting above
-#     keys: %w(/home/user_name/.ssh/id_rsa),
-#     forward_agent: false,
-#     auth_methods: %w(publickey password)
-#     # password: 'please use keys'
-#   }
+role :web, server_name                         # Your HTTP server, Apache/etc
+role :app, server_name                          # This may be the same as your `Web` server
+role :db, server_name, :primary => true # This is where Rails migrations will run

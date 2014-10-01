@@ -15,14 +15,6 @@ GIT
       ransack (~> 1.3)
       sass-rails
 
-GIT
-  remote: git://github.com/capistrano/rvm.git
-  revision: dc35ec5e7a74a422250bd6ff5e8885c8b742d0e5
-  specs:
-    capistrano-rvm (0.1.1)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -85,8 +77,9 @@ GEM
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano3-unicorn (0.2.1)
-      capistrano (~> 3.1, >= 3.1.0)
+    capistrano-unicorn (0.1.10)
+      capistrano
+    capistrano_colors (0.5.5)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -194,6 +187,9 @@ GEM
       polyamorous (~> 1.1)
     responders (1.0.0)
       railties (>= 3.2, < 5)
+    rvm1-capistrano3 (1.3.2)
+      capistrano (~> 3.0)
+      sshkit (>= 1.2)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -227,9 +223,6 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    unicorn-rails (2.2.0)
-      rack
-      unicorn
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -245,8 +238,8 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0.2)
   bootstrap-validator-rails
   capistrano-rails
-  capistrano-rvm!
-  capistrano3-unicorn
+  capistrano-unicorn
+  capistrano_colors
   coffee-rails (~> 4.0.1)
   delayed_job_active_record (~> 4.0.1)
   devise
@@ -257,7 +250,7 @@ DEPENDENCIES
   pry-rails
   rails (~> 4.1.6)
   rails_12factor
+  rvm1-capistrano3
   sass-rails (~> 4.0.3)
   uglifier (>= 2.5.3)
   unicorn (~> 4.8.3)
-  unicorn-rails (~> 2.2.0)

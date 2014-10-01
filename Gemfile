@@ -21,7 +21,10 @@ group :development do
   gem 'hirb-unicode'
   gem 'awesome_print'
 
-  gem 'capistrano3-unicorn'
+  gem 'rvm1-capistrano3', require: false
+  gem 'capistrano-rails'
+  gem 'capistrano_colors'
+  gem 'capistrano-unicorn', :require => false
 
   # Very useful gem (used with Google Chrome extention 'Rails Panel'). Read more: https://github.com/dejan/rails_panel
   gem 'meta_request', '~> 0.3.4'
@@ -36,7 +39,3 @@ end
 gem 'delayed_job_active_record', '~> 4.0.1'
 
 gem 'unicorn', '~> 4.8.3'
-gem 'unicorn-rails', '~> 2.2.0'
-
-gem 'capistrano-rails'
-gem 'capistrano-rvm', github: "capistrano/rvm"

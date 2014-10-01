@@ -1,60 +1,106 @@
-# config valid only for Capistrano 3.1
-lock '3.2.1'
+require 'rvm1/capistrano3'
+require 'bundler/capistrano'
+require 'capistrano_colors'
+require 'capistrano-unicorn'
+#require "whenever/capistrano"
 
-set :application, 'liveseasonal'
-set :repo_url, 'git@github.com:ssuprunenko/liveseasonal.git'
+set :stages, %w(production)
+set :default_stage, 'production'
+set(:rails_env) { fetch :production }
+require 'capistrano/ext/multistage'
 
-# Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+default_run_options[:pty] = true
+ssh_options[:forward_agent] = true
 
-# Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/deploy/liveseasonal'
+set :application, "liveseasonal"
 
-# Default value for :scm is :git
-# set :scm, :git
+set :keep_releases, 5
+set :scm, :git
+set :repository,  'git@github.com:ssuprunenko/liveseasonal.git'
+set :branch, "master"
 
-# Default value for :format is :pretty
-# set :format, :pretty
+set :deploy_via, :remote_cache
+set :use_sudo, false
 
-# Default value for :log_level is :debug
-# set :log_level, :debug
+set :shared_files,  %w(config/database.yml)
 
-# Default value for :pty is false
-# set :pty, true
+#set :unicorn_conf, "#{deploy_to}/current/config/unicorn/#{unicorn_env}.rb"
+#set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
-# Default value for :linked_files is []
-set :linked_files, %w{config/database.yml}
+#role :web, domain                         # Your HTTP server, Apache/etc
+#role :app, domain                          # This may be the same as your `Web` server
+#role :db, domain, :primary => true # This is where Rails migrations will run
 
-# Default value for linked_dirs is []
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :max_asset_age, 2 ## Set asset age in minutes to test modified date against.
 
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
-# Default value for keep_releases is 5
-# set :keep_releases, 5
+# cap do_rake TASK=about
+namespace :do_rake do
+  desc "remote rake task"
+  task :default do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake #{ENV['TASK']}"
+  end
+end
 
 namespace :deploy do
+  #task :restart do
+  #  run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -USR2 `cat #{unicorn_pid}`; else cd #{deploy_to}/current && bundle exec unicorn_rails -c #{unicorn_conf} -E #{rails_env} -D; fi"
+  #end
+  #task :start do
+  #  run "bundle exec unicorn_rails -c #{unicorn_conf} -E #{rails_env} -D"
+  #end
+  #task :stop do
+  #  run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -QUIT `cat #{unicorn_pid}`; fi"
+  #end
 
-  desc 'Restart application'
-  task :restart do
-    # on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
-    invoke 'unicorn:restart'
-    # end
+  desc "Maintains a shared uploads directory between releases"
+  task :symlink_shared do
+    run "mkdir -p #{shared_path}/uploads && ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
   end
 
-  after :publishing, 'deploy:restart'
-  after :finishing, 'deploy:cleanup'
+  task :update_shared_symlinks do
+    shared_files.each do |path|
+      run "rm -rf #{File.join(release_path, path)}"
+      run "ln -s #{File.join(deploy_to, "shared", path)} #{File.join(release_path, path)}"
+    end
+  end
 
-  # after :restart, :clear_cache do
-  #   on roles(:web), in: :groups, limit: 3, wait: 10 do
-  #     # Here we can do anything such as:
-  #     # within release_path do
-  #     #   execute :rake, 'cache:clear'
-  #     # end
-  #   end
-  # end
+  task :run_migrations do
+    #run "cd #{current_release} && RAILS_ENV=production bundle exec rake db:migrate"
+    from = source.next_revision(current_revision)
+    if capture("cd #{latest_release} && #{source.local.log(from)} db/migrate | wc -l").to_i > 0
+      run "cd #{current_release} && RAILS_ENV=#{rails_env} bundle exec rake db:migrate"
+      logger.info "New migrations added - running migrations."
+    else
+      logger.info "Skipping migrations - there are not any new."
+    end
+  end
 
+  namespace :assets do
+    desc "Figure out modified assets."
+    task :determine_modified_assets, :except => { :no_release => true } do
+      set :all_assets_path, %w[app lib vendor].map { |folder| "#{latest_release}/#{folder}/assets" }.join(' ')
+      set :updated_assets, capture("find #{all_assets_path} -type d -name .git -prune -o -mmin -#{max_asset_age} -type f -print", :except => { :no_release => true }).split
+    end
+
+    desc "Remove callback for asset precompiling unless assets were updated in most recent git commit."
+    task :conditionally_precompile, :except => { :no_release => true } do
+      if updated_assets.empty?
+        callback = callbacks[:after].find{|c| c.source == "deploy:assets:precompile" }
+        callbacks[:after].delete(callback)
+        logger.info("Skipping asset precompiling, no updated assets.")
+      else
+        logger.info("#{updated_assets.length} updated assets. Will precompile.")
+      end
+    end
+  end
 end
+
+after 'deploy:restart', 'unicorn:reload' # app IS NOT preloaded
+after 'deploy:restart', 'unicorn:restart'  # app preloaded
+after "deploy:finalize_update", "deploy:assets:determine_modified_assets", "deploy:assets:conditionally_precompile"
+after 'deploy:update_code', 'deploy:run_migrations'
+#after 'deploy:update_code', 'dragonfly:symlink'
+after  "deploy:finalize_update", "deploy:update_shared_symlinks"
+after "deploy:restart", "deploy:cleanup"
+
+require './config/boot'
