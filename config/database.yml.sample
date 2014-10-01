@@ -30,5 +30,5 @@ test:
 
 production:
   adapter: postgresql
-  database: prelaunchr
+  database: liveseasonal
   host: localhost

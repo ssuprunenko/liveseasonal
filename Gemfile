@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+ruby '2.1.3'
 
 gem 'rails', '~> 4.1.6'
 gem 'pg'
@@ -36,3 +36,5 @@ end
 gem 'delayed_job_active_record', '~> 4.0.1'
 
 gem 'unicorn', '~> 4.8.3'
+gem 'capistrano-rails'
+gem 'capistrano-rvm', github: "capistrano/rvm"
