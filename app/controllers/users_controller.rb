@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_filter :skip_first_page, :only => :new
+   # before_filter :skip_first_page, :only => :new
 
     def new
         @bodyId = 'home'
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
             end
 
             if cur_ip.count > 2
-                return redirect_to root_path
+    #            return redirect_to root_path
             else
                 cur_ip.count = cur_ip.count + 1
                 cur_ip.save

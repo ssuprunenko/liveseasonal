@@ -3,12 +3,16 @@ development:
   encoding: unicode
   pool: 5
   database: prelaunchr_development
+  username: postgres
+  password: 'ls54Q123'
 
 test:
   adapter: postgresql
   encoding: unicode
   pool: 5
   database: prelaunchr_test
+  username: postgres
+  password: 'ls54Q123'
 
 production:
   adapter: postgresql

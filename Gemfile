@@ -36,6 +36,8 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'newrelic_rpm'
+
 gem 'delayed_job_active_record', '~> 4.0.1'
 
 gem 'unicorn', '~> 4.8.3'
