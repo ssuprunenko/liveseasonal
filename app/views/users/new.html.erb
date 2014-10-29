@@ -2,7 +2,7 @@
 
 <section class="banner">
   <div class="container">
-    <h1>Experience travel from&nbsp;a&nbsp;local&nbsp;perspective!</h1>
+    <h1 class="cursive">Experience travel from&nbsp;a&nbsp;local&nbsp;perspective</h1>
     <div class="row">
       <div id="videobox">
         <video id="ls540091"
@@ -15,7 +15,7 @@
                data-sharing-text="Live Seasonal is building a platform to connect Travelers and Locals to create a more authentic and real travel experience."
                data-sharing-twitter-text="#liveseasonal #discoveralifestyle #connectwithlocals. Excited for @liveseasonal new platform launch."
                data-sharing-image="poster"
-               data-sharing-title="Live Seasonal" 
+               data-sharing-title="Live Seasonal"
                data-autoresize="fit"
                preload="none">
           <source src="<%= asset_path 'videos/promo.mp4' %>" data-quality="hd" />
@@ -54,10 +54,11 @@
         <% end %>
       </div>
     </div>
-    <div class="row signup-nospam">
+    <div class="row signup-tagline">
       <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
         <div class="nospam">
-          <em>We'll keep your e-mail safe. No spam, we promise!</em>
+          <p><strong>Sign up</strong> and be the first to know.</p>
+          <p><strong>Share</strong> with friends and get a free night stay in select cities next year.</p>
         </div>
       </div>
     </div>
@@ -71,7 +72,7 @@
     <div class="row">
       <div class="col-md-6 feature">
         <%= image_tag 'home/travelers.jpg' %>
-        <h3 class="pacifico">Travelers</h3>
+        <h3 class="cursive">Travelers</h3>
         <hr>
         <p>Meet locals</p>
         <p>Learn something</p>
@@ -80,7 +81,7 @@
 
       <div class="col-md-6 feature">
         <%= image_tag 'home/locals.jpg' %>
-        <h3 class="pacifico">Locals</h3>
+        <h3 class="cursive">Locals</h3>
         <hr>
         <p>Meet and connect with travelers</p>
         <p>Share similar skills and passions</p>
@@ -90,8 +91,4 @@
   </div>
 </section>
 
-<footer>
-  <div class="copy">
-    <p>Copyright © 2014 liveseasonal.com</p>
-  </div>
-</footer>
+<%= render 'footer' %>

@@ -1,23 +1,19 @@
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
   database: prelaunchr_development
-  username: postgres
-  password: 'ls54Q123'
 
 test:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  <<: *default
   database: prelaunchr_test
-  username: postgres
-  password: 'ls54Q123'
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  <<: *default
   database: liveseasonal
   username: postgres
   password: 'ls54Q123'

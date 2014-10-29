@@ -64,8 +64,8 @@
     <div class="row rewards">
       <div class="col-xs-3">
         <div class="titles">
-          <h2 id="friends">Friends Joined</h2>
-          <h2 id="party">Your Party Fund</h2>
+          <h2 id="friends">Friends&nbsp;Joined</h2>
+          <h2 id="party">Your&nbsp;Party&nbsp;Fund</h2>
         </div>
       </div>
 
@@ -76,8 +76,8 @@
 
           <div class="sep"></div>
 
-          <div class="circle reward">
-            $<%= stop[:reward] %>
+          <div class="circle reward" title="<%= stop[:title] %>">
+            <%= stop[:reward] %>
           </div>
         </div>
       <% end %>
@@ -116,3 +116,5 @@
     <p class="check">Keep checking</p>
   </div>
 </section>
+
+<%= render 'footer' %>

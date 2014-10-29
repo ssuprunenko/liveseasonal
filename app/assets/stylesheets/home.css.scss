@@ -4,21 +4,10 @@ $inner_space_1: 20px;
 $inner_space_2: 15px;
 $inner_space_3: 10px;
 
-#home{
-  font-family: "Source Sans Pro",Helvetica,Arial,sans-serif !important;
-}
-
-
 #home {
   section {
     color: rgba(0,0,0,0.7);
     text-align: center;
-
-    .pacifico {
-        font-family: "Pacifico",Source Sans Pro,Helvetica,Arial,sans-serif !important;
-        font-weight: normal;
-        color: #4acac8;
-    }
   }
 
   .banner {
@@ -31,25 +20,13 @@ $inner_space_3: 10px;
     overflow: hidden;
     margin-bottom: $outer_space - 5px;
     color: white;
-    // color: #FFF7F8;
 
     h1 {
-      font-size: 40px;
-      font-family: "Pacifico",Source Sans Pro,Helvetica,Arial,sans-serif !important;
-      font-weight: 300;
-      // font-size: 34px;
-      // font-weight: 400;
+      font-size: 45px;
+      font-weight: 200;
       margin: 30px 0 20px 0;
 
-      // -webkit-text-stroke: 1px black;
-       // color: white;
        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-       // text-shadow:
-       //     0.3px 0.3px 0 #000,
-       //   -0.3px -0.3px 0 #000,
-       //    0.3px -0.3px 0 #000,
-       //    -0.3px 0.3px 0 #000,
-       //     0.3px 0.3px 0 #000;
     }
 
     .row {
@@ -63,10 +40,7 @@ $inner_space_3: 10px;
   .signup {
     position: relative;
     display: block;
-    // background: #4acac8;
-    // padding: 20px 0;
     color: rgba(0,0,0,0.7);
-    // padding-top: 20px;
 
     .signup-tagline {
       text-align: center;
@@ -102,12 +76,12 @@ $inner_space_3: 10px;
 
       .icon-addon:after,
       .icon-addon:before {
-          display: table;
-          content: " ";
+        display: table;
+        content: " ";
       }
 
       .icon-addon:after {
-          clear: both;
+        clear: both;
       }
 
       .icon-addon .glyphicon {
@@ -123,30 +97,30 @@ $inner_space_3: 10px;
       }
 
       .icon-addon.addon-lg .form-control {
-          line-height: 1.33;
-          height: 46px;
-          font-size: 18px;
-          padding: 10px 16px 10px 40px;
+        line-height: 1.33;
+        height: 46px;
+        font-size: 18px;
+        padding: 10px 16px 10px 40px;
       }
 
 
       .icon-addon.addon-lg .glyphicon {
-          font-size: 18px;
-          margin-left: 0;
-          left: 11px;
-          top: 4px;
+        font-size: 18px;
+        margin-left: 0;
+        left: 11px;
+        top: 4px;
       }
 
       .icon-addon .form-control {
-          padding-left: 30px;
-          float: left;
-          font-weight: normal;
+        padding-left: 30px;
+        float: left;
+        font-weight: normal;
       }
 
 
       .icon-addon .form-control:focus + .glyphicon,
       .icon-addon:hover .glyphicon {
-          color: #62926D;
+        color: #62926D;
       }
     }
   }
@@ -169,7 +143,6 @@ $inner_space_3: 10px;
 
       .row {
         margin-top: 30px;
-        // margin-bottom: $inner_space_1;
 
         .feature {
           margin-bottom: $inner_space_2;
@@ -177,7 +150,7 @@ $inner_space_3: 10px;
 
           h3 {
             font-size: 40px;
-            color: #62926D;//rgba(0,0,0,0.7);
+            color: #62926D;
             margin: 0;
           }
 
@@ -196,202 +169,4 @@ $inner_space_3: 10px;
       }
     }
   }
-
-  footer {
-    text-align: center;
-    color: rgba(0,0,0,0.7);
-
-    p {
-      font-size: 15px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 80px;
-      margin-bottom: 0;
-    }
-  }
 }
-
-
-// #home .hero .large{
-//   font-weight: bold;
-//   font-size: 40px;
-//   color: #074E6F;
-//   text-transform: uppercase;
-//   margin: 85px 0 0 136px;
-//   position: relative;
-//   z-index: 2;
-//   letter-spacing: 2px;
-// }
-
-// #home .hero .small{
-//   font-weight: bold;
-//   color: #955F5D;
-//   font-size: 18px;
-//   margin: 10px 0 0 115px;
-//   line-height: 30px;
-//   position: relative;
-//   z-index: 2;
-//   text-transform: uppercase;
-//   text-align: center;
-//   width: 375px;
-//   letter-spacing: 1px;
-// }
-
-// #home .form-wrap{
-//   height: 80px;
-//   width: 411px;
-//   margin: 23px auto 0;
-// }
-
-// #home .form-wrap .key{
-//   width: 46px;
-//   height: 19px;
-//   margin: 0 auto;
-//   background: url(/assets/home/key.png) 0 0 no-repeat;
-//   background-size: 46px 19px;
-// }
-
-// // #home .form-wrap .byline{
-// //   font-size: 15px;
-// //   text-transform: uppercase;
-// //   color: #074E6F;
-// //   text-align: center;
-// //   font-weight: bold;
-// //   letter-spacing: 2px;
-// //   margin: 15px 0;
-// // }
-
-// #home .form-wrap .email{
-//   float: left;
-//   font-size: 13px;
-//   padding: 8px 0 8px 10px;
-//   border: 1px solid #074E6F;
-//   width: 256px;
-//   outline: none;
-//   letter-spacing: 1px;
-// }
-
-// // #home .form-wrap .submit{
-// //   width: 143px;
-// //   background: #074E6F;
-// //   float: left;
-// //   height: 37px;
-// //   line-height: 37px;
-// //   color: #FFF;
-// //   font-size: 13px;
-// //   text-transform: uppercase;
-// //   border: 0;
-// //   letter-spacing: 2px;
-// // }
-
-// #home .form-wrap.ended{
-//   width: 500px;
-//   margin-top: 27px;
-// }
-
-// #home .form-wrap.ended .thanks{
-//   text-transform: uppercase;
-//   font-weight: 500;
-//   color: #074e6f;
-//   text-align: center;
-//   font-size: 22px;
-//   letter-spacing: 1px;
-//   line-height: 36px;
-//   margin-bottom: 14px;
-// }
-
-// #home .form-wrap.ended .compiling{
-//   text-transform: uppercase;
-//   letter-spacing: 1px;
-//   font-size: 14px;
-//   line-height: 30px;
-//   color: #555556;
-//   text-align: center;
-//   font-weight: 500;
-//   margin-bottom: 24px;
-// }
-
-// #home .form-wrap.ended .go-to{
-//   font-style: italic;
-//   font-size: 16px;
-//   letter-spacing: 1px;
-//   text-align: center;
-//   margin-bottom: 25px;
-// }
-
-// #home .form-wrap.ended .go-to a{
-//   color: #074e6f;
-//   font-size: 19px;
-//   font-weight:bold;
-//   text-transform: uppercase;
-//   font-style: normal;
-//   text-decoration: none;
-// }
-
-// #home .form-wrap.ended .go-to a:hover{
-//   color: #955F5D;
-// }
-
-// #home .form-wrap.ended .again{
-//   font-weight: 500;
-//   color: #555556;
-//   text-transform: uppercase;
-//   font-size: 14px;
-//   text-align: center;
-// }
-
-// #home .form-wrap.ended{
-//   width: 500px;
-//   margin-top: 27px;
-// }
-
-// #home .form-wrap.ended .thanks{
-//   text-transform: uppercase;
-//   font-weight: 500;
-//   color: #074e6f;
-//   text-align: center;
-//   font-size: 22px;
-//   letter-spacing: 1px;
-//   line-height: 36px;
-//   margin-bottom: 14px;
-// }
-
-// #home .form-wrap.ended .compiling{
-//   text-transform: uppercase;
-//   letter-spacing: 1px;
-//   font-size: 14px;
-//   line-height: 30px;
-//   color: #555556;
-//   text-align: center;
-//   font-weight: 500;
-//   margin-bottom: 24px;
-// }
-
-// #home .form-wrap.ended .go-to{
-//   font-style: italic;
-//   font-size: 16px;
-//   letter-spacing: 1px;
-//   text-align: center;
-//   margin-bottom: 25px;
-// }
-
-// #home .form-wrap.ended .go-to a{
-//   color: #074e6f;
-//   font-size: 19px;
-//   font-weight:bold;
-//   text-transform: uppercase;
-//   font-style: normal;
-//   text-decoration: none;
-// }
-
-// #home .form-wrap.ended .go-to a:hover{
-//   color: #955F5D;
-// }
-
-// #home .form-wrap.ended .again{
-//   font-weight: 500;
-//   color: #555556;
-//   text-transform: uppercase;
-//   font-size: 14px;
-//   text-align: center;
-// }

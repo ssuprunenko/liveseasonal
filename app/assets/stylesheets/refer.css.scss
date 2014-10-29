@@ -5,16 +5,15 @@ $smokeblack: rgba(0,0,0,0.7);
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+  content: " "; /* 1 */
+  display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 #refer {
-  font-family: "Source Sans Pro",Helvetica,Arial,sans-serif !important;
   color: $smokeblack;
 
   .banner {
@@ -107,6 +106,8 @@ $smokeblack: rgba(0,0,0,0.7);
   .prizes {
     .container {
       text-align: center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #eee;
     }
 
     h1 {
@@ -119,13 +120,14 @@ $smokeblack: rgba(0,0,0,0.7);
 
     .rewards {
       padding-top: 20px;
+      min-width: 610px;
 
       .titles {
         padding-left: 20px;
 
         #friends {
           margin-top: 10px;
-          margin-bottom: 60px;
+          margin-bottom: 70px;
         }
 
         h2 {
@@ -144,13 +146,13 @@ $smokeblack: rgba(0,0,0,0.7);
         // position: relative;
 
         .circle {
-          height: 40px;
-          width: 40px;
-          border-radius: 20px;
+          height: 48px;
+          width: 48px;
+          border-radius: 24px;
           font-size: 18px;
           border: 1px solid #DAD9D2;
           text-align: center;
-          line-height: 40px;
+          line-height: 46px;
           color: #868282;
           overflow: hidden;
           background: #F1F0EE;
@@ -187,7 +189,7 @@ $smokeblack: rgba(0,0,0,0.7);
         background: asset-data-url("refer/progress-bg.png") 0 0 repeat-x;
         background-size: 1px 4px;
         position: relative;
-        top: -65px;
+        top: -70px;
         z-index: 0;
 
         .mover {

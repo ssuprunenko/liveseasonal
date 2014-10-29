@@ -7,7 +7,6 @@ Prelaunchr::Application.routes.draw do
 
   post 'users/create', to: 'users#create'
   get 'refer-a-friend', to: 'users#refer'
-  get 'privacy-policy', to: 'users#policy'
 
   unless Rails.application.config.consider_all_requests_local
     match '*not_found', to: 'users#redirect', :format => false, :via => :all

@@ -18,13 +18,9 @@ gem 'uglifier', '>= 2.5.3'
 group :development do
     # Console
   gem 'pry-rails'
-  gem 'hirb-unicode'
   gem 'awesome_print'
 
-  gem 'capistrano', '~> 2.15.5'
-  gem 'rvm-capistrano'
-  gem 'capistrano_colors'
-  gem 'capistrano-unicorn', :require => false
+  gem 'spring'
 
   # Very useful gem (used with Google Chrome extention 'Rails Panel'). Read more: https://github.com/dejan/rails_panel
   gem 'meta_request', '~> 0.3.4'
@@ -39,5 +35,3 @@ end
 gem 'newrelic_rpm'
 
 gem 'delayed_job_active_record', '~> 4.0.1'
-
-gem 'unicorn', '~> 4.8.3'

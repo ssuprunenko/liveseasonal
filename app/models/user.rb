@@ -9,7 +9,6 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #
-
 class User < ActiveRecord::Base
     belongs_to :referrer, :class_name => "User", :foreign_key => "referrer_id"
     has_many :referrals, :class_name => "User", :foreign_key => "referrer_id"
@@ -23,23 +22,27 @@ class User < ActiveRecord::Base
     REFERRAL_STEPS = [
         {
             count: 6,
-            reward: 3,
-            class: "two",
+            reward: '$3',
+            title: '3 dollars',
+            class: "two"
         },
         {
             count: 12,
-            reward: 6,
-            class: "three",
+            reward: '$6',
+            title: '6 dollars',
+            class: "three"
         },
         {
             count: 24,
-            reward: 12,
-            class: "four",
+            reward: 'BER',
+            title: 'Berlin, Germany',
+            class: "four"
         },
         {
             count: 50,
-            reward: 25,
-            class: "five",
+            reward: 'BCN',
+            title: 'Barcelona, Spain',
+            class: "five"
         }
     ]
 
