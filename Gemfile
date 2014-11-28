@@ -1,37 +1,40 @@
 source 'https://rubygems.org'
-ruby '2.1.3'
+ruby '2.1.5'
 
-gem 'rails', '~> 4.1.6'
+gem 'rails', '~> 4.1.8'
+
 gem 'pg'
 
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 
-gem 'font-awesome-rails', '~> 4.2.0.0'
-gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'font-awesome-rails'
+gem 'bootstrap-sass'
 gem 'bootstrap-validator-rails'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'
 gem 'autoprefixer-rails'
-gem 'coffee-rails', '~> 4.0.1'
+gem 'coffee-rails'
 gem 'uglifier', '>= 2.5.3'
 
 group :development do
-    # Console
+  # Console
   gem 'pry-rails'
+  gem 'hirb-unicode'
   gem 'awesome_print'
 
   gem 'spring'
 
-  # Very useful gem (used with Google Chrome extention 'Rails Panel'). Read more: https://github.com/dejan/rails_panel
   gem 'meta_request', '~> 0.3.4'
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem 'mina', require: false
 end
 
 group :production do
+  gem 'passenger'
   gem 'rails_12factor'
 end
 
 gem 'newrelic_rpm'
-
-gem 'delayed_job_active_record', '~> 4.0.1'
+gem 'delayed_job_active_record', '~> 4.0'
