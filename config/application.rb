@@ -10,7 +10,7 @@ module Prelaunchr
     config.encoding = "utf-8"
 
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
-
+    config.ended = false
     config.middleware.use Rack::Deflater
   end
 end
