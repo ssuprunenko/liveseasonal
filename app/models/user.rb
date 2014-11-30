@@ -21,27 +21,27 @@ class User < ActiveRecord::Base
 
     REFERRAL_STEPS = [
         {
-            count: 6,
-            reward: '$3',
-            title: '3 dollars',
+            count: 1,
+            reward: 'thumbsup',
+            title: 'Thank you!',
             class: "two"
         },
         {
-            count: 12,
-            reward: '$6',
-            title: '6 dollars',
+            count: 5,
+            reward: 'raised_hands',
+            title: 'High five!',
             class: "three"
         },
         {
-            count: 24,
-            reward: 'BER',
-            title: 'Berlin, Germany',
+            count: 10,
+            reward: 'beer',
+            title: 'Free Beer',
             class: "four"
         },
         {
             count: 50,
-            reward: 'BCN',
-            title: 'Barcelona, Spain',
+            reward: 'hotel',
+            title: 'Free night stays',
             class: "five"
         }
     ]

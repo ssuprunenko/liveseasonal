@@ -17,12 +17,11 @@ $smokeblack: rgba(0,0,0,0.7);
   color: $smokeblack;
 
   .banner {
-    .row {
-      margin-bottom: 30px;
+    .container {
+      padding-bottom: 45px;
     }
 
     .slogan {
-      // width: 555px;
       height: 420px;
       background: asset-data-url("refer/banner-refer.jpg") 0 0 no-repeat;
       background-size: 100%;
@@ -46,9 +45,8 @@ $smokeblack: rgba(0,0,0,0.7);
       .title {
         font-size: 30px;
         line-height: 40px;
-        // text-transform: uppercase;
         font-weight: bold;
-        color: $darkishblue;
+        color: #777c84;
         margin-top: 18px;
         letter-spacing: .13em;
       }
@@ -103,11 +101,33 @@ $smokeblack: rgba(0,0,0,0.7);
     }
   }
 
+  .seo-speach {
+    .container {
+      padding-top: 40px;
+    }
+  }
+
+  .works {
+    h3, p {
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 40px;
+      color: #34373b;
+      margin: 0 0 20px;
+    }
+
+    b {
+      font-size: 20px;
+    }
+  }
+
   .prizes {
     .container {
       text-align: center;
+      padding-top: 20px;
       padding-bottom: 40px;
-      border-bottom: 1px solid #eee;
     }
 
     h1 {
@@ -119,32 +139,32 @@ $smokeblack: rgba(0,0,0,0.7);
     }
 
     .rewards {
-      padding-top: 20px;
+      padding-top: 35px;
       min-width: 610px;
 
       .titles {
-        padding-left: 20px;
+        min-width: 210px;
 
         #friends {
-          margin-top: 10px;
-          margin-bottom: 70px;
+          margin-top: 9px;
+          margin-bottom: 58px;
         }
 
         h2 {
-          font-size: 20px;
-          // margin-top: 30px;
-          // margin-bottom: 30px;
+          font-size: 28px;
+          color: #34373b;
         }
       }
 
-      .product {
-        // height: 100%;
-        // color: #F1F0EE;
-        // width: 125px;
-        // margin-right: 129px;
-        // float: left;
-        // position: relative;
+      @media (min-width: 417px) and (max-width: 991px) {
+          .titles {
+            padding-right: 50px;
+          }
+        }
 
+
+
+      .product {
         .circle {
           height: 48px;
           width: 48px;
@@ -153,16 +173,20 @@ $smokeblack: rgba(0,0,0,0.7);
           border: 1px solid #DAD9D2;
           text-align: center;
           line-height: 46px;
-          color: #868282;
+          color: black;
           overflow: hidden;
-          background: #F1F0EE;
+          // background: #F1F0EE;
           font-weight: bold;
           margin: 0 auto;
         }
 
         .reward {
-          background: #8effa6;
-          color: #00bf50;
+          background: white;
+
+          img {
+            width: 30px;
+            padding-top: 5px;
+          }
         }
 
         .sep {
@@ -180,16 +204,36 @@ $smokeblack: rgba(0,0,0,0.7);
 
       .last {
         margin-right: 0;
+        padding-right: 0;
+
+        .circle, .sep {
+          margin-right: 0;
+        }
+      }
+
+      .hotels-map {
+        padding-left: 0;
+
+        img {
+          margin-left: 0;
+          padding-top: 30px;
+        }
+
+        @media (min-width: 417px) and (max-width: 991px) {
+          img {
+            padding-top: 50px;
+          }
+        }
       }
 
       .progress {
         height: 4px;
-        width: 88%;
-        margin: 0 auto;
+        width: 65%;
+        margin-left: 30px;
         background: asset-data-url("refer/progress-bg.png") 0 0 repeat-x;
         background-size: 1px 4px;
         position: relative;
-        top: -70px;
+        top: -115px;
         z-index: 0;
 
         .mover {
@@ -198,10 +242,29 @@ $smokeblack: rgba(0,0,0,0.7);
           left: 0;
         }
       }
+
+      @media (min-width: 992px) and (max-width: 1199px) {
+        .progress {
+          top: -108px;
+        }
+      }
+
+      @media (min-width: 744px) and (max-width: 991px) {
+        .progress {
+          top: -94px;
+        }
+      }
+
+      @media (max-width: 743px) {
+        .progress {
+          display: none;
+        }
+      }
+
     }
 
     h2.callout {
-      color: $darkishblue;
+      color: #4acac8;
       margin-bottom: 20px;
     }
 

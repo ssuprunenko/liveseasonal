@@ -2,24 +2,17 @@
   <nav class="navbar" role="navigation">
     <div class="container">
       <nav class="navbar-header">
-        <button class="navbar-toggle collapsed" data-target='navbar-collapse' data-toggle='collapse'>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
         <%= link_to root_path, class: 'navbar-brand logo' do %>
           <div></div>
         <% end %>
       </nav>
       <nav class="navbar-collapse collapse nav-access">
-        <ul class="nav navbar-nav">
-          <li>
-            <%= link_to 'Experiences', root_path, class: 'cursive' %>
-          </li>
-        </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <%= link_to 'Coming Soon!', root_path, class: 'cursive' %>
+            <%= link_to 'Experiences', '#', class: 'cursive' %>
+          </li>
+          <li>
+            <%= link_to 'Coming Dec 20th', '#', class: 'cursive' %>
           </li>
         </ul>
       </nav>

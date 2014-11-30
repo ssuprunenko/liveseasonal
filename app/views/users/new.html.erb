@@ -7,7 +7,7 @@
       <div id="videobox">
         <video id="ls540091"
                class="sublime"
-               poster="<%= asset_path 'home/poster@2x.jpg' %>"
+               poster="<%= asset_path 'home/poster.jpg' %>"
                width="640"
                height="360"
                title="Live Seasonal"
@@ -29,8 +29,16 @@
 <section class="signup">
   <div class="container">
     <div class="row signup-tagline">
-      <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-        <p>Connect with fantastic people, share skills and experiences and make life long friends!</p>
+      <div class="col col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <p>
+          <b>Live Seasonal</b> is a platform for connecting travelers with locals from around the world. We want to make it easier for people to arrive somewhere new and immediately discover a little of what its like to live there, through connecting with like-minded local&nbsp;people
+        </p>
+        <p>
+          Please enjoy our awesome travel video above. It’s the way we love to travel and maybe it will provide some inspiration for your next adventure
+        </p>
+        <p>
+          <b>Sign up</b> and be the first to know
+        </p>
       </div>
     </div>
     <div class="row signup-action">
@@ -54,12 +62,24 @@
         <% end %>
       </div>
     </div>
-    <div class="row signup-tagline">
-      <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-        <div class="nospam">
-          <p><strong>Sign up</strong> and be the first to know.</p>
-          <p><strong>Share</strong> with friends and get a free night stay in select cities next year.</p>
-        </div>
+  </div>
+</section>
+
+<section class="seo-speach">
+  <div class="container">
+    <div class="row">
+      <div class="col col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+        <h3>Matt Oakes</h3>
+        <h4>Founder</h4>
+        <p>
+          I am Matt from Live Seasonal. This platform is really going to change the way people travel.  It’ll be interactive, fun and will open up a whole new style of travel, without people like you, however, it is just a dream. I really need your help to get this going so if you like what we are doing here jump on our e-mail list and share the platform around with your friends — we’d really appreciate it.
+        </p>
+        <p>
+          10 Friends shared and signed up gets you a <b>free beer</b> at your local.
+        </p>
+        <p>
+          Also <b>Free night stays</b> possible at amazing destinations and Festivals next year (Enter e-mail to find out more).
+        </p>
       </div>
     </div>
   </div>
@@ -67,25 +87,101 @@
 
 <section class="features">
   <div class="container">
-    <h2>We are building a platform that connects Travelers and Locals</h2>
-
     <div class="row">
-      <div class="col-md-6 feature">
-        <%= image_tag 'home/travelers.jpg' %>
-        <h3 class="cursive">Travelers</h3>
-        <hr>
-        <p>Meet locals</p>
-        <p>Learn something</p>
-        <p>Travel more affordably</p>
+      <div class="col-md-12">
+        <h3 class="cursive">So how does it work</h3>
       </div>
 
-      <div class="col-md-6 feature">
-        <%= image_tag 'home/locals.jpg' %>
-        <h3 class="cursive">Locals</h3>
-        <hr>
-        <p>Meet and connect with travelers</p>
-        <p>Share similar skills and passions</p>
-        <p>Be an Entrepreneur and make money</p>
+      <div class="col-md-6 feature feature-left">
+        <h3 class="cursive">For travelers</h3>
+        <div class="image-head">
+          <%= image_tag 'home/computer.png' %>
+        </div>
+
+        <div class="feature-section feature-section-first rgt">
+          <h4 class="cursive">Plan your trip</h4>
+          <p>
+            Dream up your next big adventure by <b>searching</b> through thousands of experiences all around the world hosted by real locals. <b>Book&nbsp;experiences</b> at each of your destinations or <b>request experiences</b> you want to have! Cool huh?
+          </p>
+          <div class="image-section">
+            <%= image_tag 'home/cities.png' %>
+          </div>
+        </div>
+
+        <div class="feature-section feature-section-second lft">
+          <h4 class="cursive">Discover places</h4>
+          <p>
+            Travel more <b>affordably</b>, uncover <b>hidden spots</b> and meet the people with awesome <b>local&nbsp;knowledge</b>. Get away from the commercial spots and extend your adventure.
+          </p>
+          <div class="image-section">
+            <%= image_tag 'home/mountain.png' %>
+          </div>
+        </div>
+
+        <div class="feature-section feature-section-third rgt">
+          <h4 class="cursive">Adventure with locals</h4>
+          <p>
+            <b>Are you a snowboarder?</b> Have a local rider take you into the hills for the day shredding the best lines. <b>A&nbsp;hiker?</b> Have a local take your straight to the most breathtaking and secluded spots for the weekend.
+          </p>
+          <p>
+            <b>So, you’re an art lover?</b> Go on a mini tour of the town’s best art galleries and maybe even meet the artists themselves.
+          </p>
+          <p>
+            The people who host experiences are real people (just like you) so you’ll find others with the same passions for life and adventure.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-6 feature feature-right">
+        <h3 class="cursive">For locals</h3>
+        <div class="image-head">
+          <%= image_tag 'home/tower.png' %>
+        </div>
+
+        <div class="feature-section feature-section-first lft">
+          <h4 class="cursive">Create an experience</h4>
+          <p>
+            Got something you love doing? <b>Share it with&nbsp;other&nbsp;travellers</b> and host your own experience. From showing a traveller local sights, to windsurfing the best spots in your area, to taking them out on the town - it’s up to you!
+          </p>
+          <div class="image-section">
+            <%= image_tag 'home/money.png' %>
+          </div>
+        </div>
+
+        <div class="feature-section feature-section-second rgt">
+          <h4 class="cursive">Make money</h4>
+          <p>
+            When travellers bid on your experience, <b>you&nbsp;make&nbsp;money!</b> You set the price to what you want and we take a small fee when the sale goes through. All you have to do is host a great experience!
+          </p>
+        </div>
+
+        <div class="feature-section feature-section-third lft">
+          <h4 class="cursive">Meet amazing people</h4>
+          <p>
+            The people who host will no doubt have the same interests and life goals. You’ll find yourself making <b>life-long&nbsp;friendships</b> and having the time of your life, all in your own town.
+          </p>
+          <p>
+            We find a lot of our hosts end up being hosted by people they’ve met through Live Seasonal. <b>We reckon this is pretty special.</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-12 feature feature-center">
+        <div class="feature-section">
+          <h4 class="cursive">Make friends</h4>
+          <div class="image">
+            <%= image_tag 'home/friends.png' %>
+          </div>
+          <p>
+            <b>We want to change the way people travel.</b>
+          </p>
+          <p>
+            Everybody has a story to tell and some local knowledge that another person would love to acquire. It’s about the thrill of going to a foreign city and leaving with having experienced the city as a local, with new friends, knowledge and memories you simply can’t get with conventional travel.
+          </p>
+          <p>
+            That’s the experience we’re all about.
+          </p>
+        </div>
       </div>
     </div>
   </div>

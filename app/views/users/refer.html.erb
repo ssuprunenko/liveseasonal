@@ -9,14 +9,10 @@
 
       <div class="col-xs-12 col-sm-5">
         <div class="share-wrap">
-          <p class="why">Sign up as a launcher</p>
-
-          <p class="title">Invite Friends &<br>Earn Money</p>
+          <p class="title">Share with Friends and Have a Beer on us</p>
 
           <p class="subtitle">
-            Share your unique link via email,<br>
-            Facebook or Twitter and earn money<br>
-            for each friend who signs up.
+            Share your unique link via e-mail, Facebook or Twitter and help launch this exciting new platform.
           </p>
 
           <div class="copy-link"><%= root_url %>?ref=<%= @user.referral_code %></div>
@@ -54,49 +50,60 @@
   end
  %>
 
-<section class="prizes">
+<section class="seo-speach works">
   <div class="container">
-    <div class="row works">
-      <div class="col-xs-12">
-        <h1>Here's How It Works:</h1>
+    <div class="row">
+      <div class="col col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+        <h3 class="cursive">Here is how it works</h3>
+        <p>
+          We are currently pre-launching so please only share with 10 of your closest travel friends.
+        </p>
+        <p>
+          As your friends sign up, your bar below will reflect this as you reach new milestones. When 10 of your friends have signed up, we will organize for you a free beer/wine/coffee at your local bar/pub. Haha, I am really stoked about this and have enjoyed phoning bars and organizing free beers for new friends.
+        </p>
+        <p>
+          <b>We love happy, exciting people.</b>
+        </p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="prizes">
+  <div class="container">
     <div class="row rewards">
       <div class="col-xs-3">
         <div class="titles">
-          <h2 id="friends">Friends&nbsp;Joined</h2>
-          <h2 id="party">Your&nbsp;Party&nbsp;Fund</h2>
+          <h2 class="cursive" id="friends">Friends&nbsp;Joined</h2>
+          <h2 class="cursive" id="party">Rewards</h2>
         </div>
       </div>
 
 
       <% stops.each_with_index do |stop, index| %>
-        <div class="col-xs-2 product<% if stop[:class] == 'five' %> last<% end %>">
+        <div class="col-xs-1 product<% if stop[:class] == 'five' %> col-xs-offset-1 last<% end %>">
           <div class="circle"><%= stop[:count] %></div>
 
           <div class="sep"></div>
 
           <div class="circle reward" title="<%= stop[:title] %>">
-            <%= stop[:reward] %>
+            <%= image_tag "refer/#{stop[:reward]}.png" %>
           </div>
         </div>
       <% end %>
 
-
-
+      <div class="hotels-map col-xs-4">
+        <%= image_tag 'refer/hotels_map.png' %>
+      </div>
 
         <div class="progress">
           <div class="mover">
+            <div class="bar clearfix"></div>
           </div>
         </div>
-
-
-
-        <!-- <p class="ship">We ship to the U.S. (& Canada Soon)</p> -->
-        <!-- <a class="policy" href="/privacy-policy" target="_blank">Privacy Policy</a> -->
     </div>
 
-    <h2 class="callout">Payments on a Friday &mdash; Boom, Weekend!</h2>
+    <h2 class="callout">Drinks on a Friday &mdash; Boom, Weekend!</h2>
 
 
     <%
@@ -114,6 +121,21 @@
         <p class="place"><span><%= referrals_count %></span> <%= words %> joined</p>
     <% end %>
     <p class="check">Keep checking</p>
+  </div>
+</section>
+
+<section class="seo-speach">
+  <div class="container">
+    <div class="row">
+      <div class="col col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+        <p>
+          I'm Matt from Live Seasonal. This platform is really going to change the way people travel. It'll be interactive, fun and will open up a whole new style of travel. Without people like you however, it's just a dream. I really need your help to get this going so if you like what we're doing here jump on our email list and share around the platform with your friends — we'd really appreciate it!
+        </p>
+        <p>
+          We launch on December 20th and closer to that time you are more than welcome to share with as many friends as you would like. If you reach 50 there is a free night stay at available at amazing destinations and festivals around the world, next year.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
