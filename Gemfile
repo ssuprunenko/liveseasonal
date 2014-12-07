@@ -33,7 +33,6 @@ end
 
 group :production do
   gem 'passenger'
-  gem 'rails_12factor'
 end
 
 gem 'newrelic_rpm'
